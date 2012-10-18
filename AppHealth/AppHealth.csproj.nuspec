@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AppHealth</id>
+    <version>1.0.0</version>
+    <authors>Henning Støverud</authors>
+    <owners>Henning Støverud</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>AppHealth</description>
+    <releaseNotes>Tool for monitoring application health.</releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <tags>Instrumentation Diagnostics</tags>
+  </metadata>
+</package>

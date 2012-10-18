@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using AppHealth;
 using NUnit.Framework;
 
@@ -58,6 +59,15 @@ namespace Tests
             public bool IsUp()
             {
                 return false;
+            }
+        }
+
+        public class SlowNode : IHealthCheckable
+        {
+            public bool IsUp()
+            {
+                Thread.Sleep(100);
+                return true;
             }
         }
 

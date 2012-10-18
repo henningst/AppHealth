@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AppHealth
 {
@@ -19,13 +18,18 @@ namespace AppHealth
 
         public List<HealthCheckableStatus> GetStatus()
         {
+            var stopWatch = new Stopwatch();
             var statuses = new List<HealthCheckableStatus>();
 
             var healthCheckables = GetHealthCheckables();
             foreach (var healthCheckable in healthCheckables)
             {
                 var hc = (IHealthCheckable)Activator.CreateInstance(healthCheckable);
-                statuses.Add(new HealthCheckableStatus(healthCheckable.Name, hc.IsUp()));
+                stopWatch.Reset();
+                stopWatch.Start();
+                var isUp = hc.IsUp();
+                stopWatch.Stop();
+                statuses.Add(new HealthCheckableStatus(healthCheckable.Name, isUp, stopWatch.ElapsedMilliseconds));
             }
             return statuses;
         }

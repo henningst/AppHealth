@@ -1,0 +1,1 @@
+﻿write-host "Installing AppHealth...." -foregroundcolor "magenta"

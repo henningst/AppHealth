@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DucksboardClientTests.cs" />
     <Compile Include="HealthCheckerTests.cs" />
+    <Compile Include="HealthCheckHttpHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +54,10 @@
     <ProjectReference Include="..\AppHealth\AppHealth.csproj">
       <Project>{E388677A-CD7B-4F00-ABDA-80521B1F2E75}</Project>
       <Name>AppHealth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DucksboardClient\DucksboardClient.csproj">
+      <Project>{36EAED51-19ED-454D-9872-540186C963C0}</Project>
+      <Name>DucksboardClient</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
